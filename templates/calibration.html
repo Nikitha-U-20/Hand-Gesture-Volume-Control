@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Volume Calibration</h1>
+
+<form method="POST">
+
+<label>Minimum Volume</label>
+<br>
+<input type="number" name="min_vol" min="0" max="100" required>
+<br><br>
+
+<label>Maximum Volume</label>
+<br>
+<input type="number" name="max_vol" min="0" max="100" required>
+<br><br>
+
+<button type="submit">Save Calibration</button>
+
+</form>
+
+<br>
+
+<form action="/remove_calibration" method="POST">
+<button type="submit">Remove Calibration</button>
+</form>
+
+{% endblock %}

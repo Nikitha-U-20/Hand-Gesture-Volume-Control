@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Smart Gesture Audio Controller</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="sidebar">
+<h2>Smart Controller</h2>
+
+<a href="/">Dashboard</a>
+<a href="/gesture">Gesture Volume</a>
+<a href="/calibration">Calibration</a>
+<a href="/audio">Audio Mapping</a>
+<a href="/system">System Info</a>
+
+</div>
+
+<div class="content">
+{% block content %}
+{% endblock %}
+</div>
+
+</body>
+</html>

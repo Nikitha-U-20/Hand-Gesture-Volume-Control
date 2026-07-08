@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Audio Visualizer + Voice Control</h1>
+
+<h2 id="status">🎤 Listening...</h2>
+
+<div class="audio-bar">
+  <div id="audio-level"></div>
+</div>
+
+<script>
+function updateAudio(){
+    fetch("/audio_data")
+    .then(res => res.json())
+    .then(data => {
+
+        let bar = document.getElementById("audio-level");
+
+        if(data.muted){
+            bar.style.width = "0px";
+        }
+        else{
+            bar.style.width = (data.level * 5) + "px";
+        }
+
+    });
+}
+
+setInterval(updateAudio,150);
+// 🔥 AUTO VOICE LISTEN
+function autoVoice(){
+    fetch("/voice_command")
+    .then(res => res.json())
+    .then(data => {
+        if(data.result !== "No command detected"){
+            document.getElementById("status").innerText = data.result;
+        }
+    });
+}
+
+setInterval(updateAudio,150);
+setInterval(autoVoice,4000);  // every 4 sec listens automatically
+</script>
+
+{% endblock %}

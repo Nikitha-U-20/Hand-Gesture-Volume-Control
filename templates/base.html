@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Control System</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>⚡ Smart AI</h2>
+
+        <a href="/">🏠 Dashboard</a>
+        <a href="/gesture">🖐️ Gesture Control</a>
+        <a href="/calibration">⚙️ Calibration</a>
+        <a href="/audio">🎤 Audio + Voice</a>
+        <a href="/system">💻 System Info</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</div>
+
+</body>
+</html>

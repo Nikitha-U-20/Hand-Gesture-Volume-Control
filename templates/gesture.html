@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Gesture Volume Control</h1>
+
+<div class="camera-box">
+    <img src="{{ url_for('video') }}">
+</div>
+
+<p>Move thumb and index finger to control system volume.</p>
+
+{% endblock %}
